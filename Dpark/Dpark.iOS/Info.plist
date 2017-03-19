@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>7.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>Disability Parking Locator</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.lyon.us.dpark</string>
+	<key>CFBundleVersion</key>
+	<string>2.0.4</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon-60@2x.png</string>
+		<string>Icon-Small@2x.png</string>
+		<string>Icon-Small.png</string>
+		<string>Icon-Small-40@2x.png</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>NSAllowArbitraryLoads</key>
+			<true/>
+			<key>NSExceptionDomains</key>
+			<dict>
+				<key>dpark.us</key>
+				<string></string>
+			</dict>
+		</dict>
+	</dict>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Can we use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We are using your location</string>
+	<key>NSCameraUsageDescription</key>
+	<string>using camera for photo upload</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>using gallery for photo upload</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+</dict>
+</plist>

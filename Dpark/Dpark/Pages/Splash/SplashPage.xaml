@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!---Note that SplashPageXaml is a type defined at the bottom of the SplashPageXaml.cs file -->
+<!--xmlns:converters="clr-namespace:XamarinCRM.Converters"-->
+<page:SplashPageXaml
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="Dpark.Pages.Splash.SplashPage"
+  xmlns:app="clr-namespace:Dpark"
+  xmlns:page="clr-namespace:Dpark.Pages.Splash"
+  xmlns:statics="clr-namespace:Dpark.Statics"
+  xmlns:i18n="clr-namespace:Dpark.Localization"
+	BackgroundColor="White">
+
+  <page:SplashPageXaml.Content>
+    <AbsoluteLayout 
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="FillAndExpand">
+
+      <BoxView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All"
+               Color="{x:Static statics:Palette._001}" />
+
+      <Image x:Name="Logo"
+              Source="img_logo.png"
+              HeightRequest="100"
+              Aspect="AspectFit"
+              AbsoluteLayout.LayoutBounds="0.5, 0.45, AutoSize, AutoSize"
+              AbsoluteLayout.LayoutFlags="PositionProportional"/>
+      
+      <ActivityIndicator x:Name="LoadingActivityIndicator"
+							IsEnabled="{Binding IsLoadingUI}"
+							IsVisible="{Binding IsLoadingUI}"
+							IsRunning="{Binding IsLoadingUI}"
+							AbsoluteLayout.LayoutBounds="0.5, 0.7, AutoSize, AutoSize"
+							AbsoluteLayout.LayoutFlags="PositionProportional" />
+      
+       <Label x:Name="txtProcessMessage"
+              Text="{Binding ProcessMessage}"
+              TextColor="{x:Static statics:Palette._007}"
+					    HeightRequest="30"
+					    FontSize="Micro"
+              AbsoluteLayout.LayoutBounds="0.5, 0.85, AutoSize, AutoSize"
+							AbsoluteLayout.LayoutFlags="PositionProportional" />
+      
+      <Button x:Name="btnRetry"
+              Text="{Binding BtnRetryText}"
+              IsVisible="{Binding IsRetry}"
+              TextColor="{x:Static statics:Palette._008}"
+              Clicked="OnRetryClicked"
+              AbsoluteLayout.LayoutBounds="0.5, 0.9, AutoSize, AutoSize"
+							AbsoluteLayout.LayoutFlags="PositionProportional" />
+      
+    </AbsoluteLayout>
+  </page:SplashPageXaml.Content>
+</page:SplashPageXaml>

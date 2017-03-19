@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:SearchSpaceDetailOptionViewXaml
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="Dpark.Views.Search.SearchSpaceDetailOptionView"
+  xmlns:base="clr-namespace:Dpark.Views.Search"
+  xmlns:statics="clr-namespace:Dpark.Statics"
+  xmlns:i18n="clr-namespace:Dpark.Localization"
+  xmlns:core="clr-namespace:System">
+ 
+   <AbsoluteLayout>
+   <StackLayout   
+      Spacing="0"
+      Padding="30,0"
+      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+      AbsoluteLayout.LayoutBounds="0, 0.5, 1, AutoSize">
+     
+    <Label x:Name="labelOption"
+      Text="We’d love to hear from you!  If the space doesn't exist or innacurate. Please tap on the flag icon to send us a note."
+      TextColor="{x:Static statics:Palette._006}"
+      FontSize="Small"
+		  LineBreakMode="WordWrap"
+		  Style="{DynamicResource Label_Default-Medium-Default}" />
+    </StackLayout>
+
+    <AbsoluteLayout
+		WidthRequest="{x:Static statics:RowSizes.MediumRowHeightDouble}"
+		HeightRequest="{x:Static statics:RowSizes.MediumRowHeightDouble}"
+		AbsoluteLayout.LayoutFlags="PositionProportional"
+		AbsoluteLayout.LayoutBounds="0.95, 0.5, AutoSize, AutoSize">
+      <!--<AbsoluteLayout.GestureRecognizers>
+        <TapGestureRecognizer
+				Command="{Binding MapMarkerIconTappedCommand}"
+				NumberOfTapsRequired="1" />
+      </AbsoluteLayout.GestureRecognizers>-->
+      <AbsoluteLayout.Children>
+        <Image
+				AbsoluteLayout.LayoutFlags="PositionProportional"
+				AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"
+				Aspect="AspectFit"
+                HeightRequest="25">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource">
+              <OnPlatform.iOS>
+                <FileImageSource File="map_marker_ios" />
+              </OnPlatform.iOS>
+              <OnPlatform.Android>
+                <FileImageSource File="map_marker_android" />
+              </OnPlatform.Android>
+            </OnPlatform>
+          </Image.Source>
+        </Image>
+      </AbsoluteLayout.Children>
+    </AbsoluteLayout>
+  </AbsoluteLayout>
+</base:SearchSpaceDetailOptionViewXaml>

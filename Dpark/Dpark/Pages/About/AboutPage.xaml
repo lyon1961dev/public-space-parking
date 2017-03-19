@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:AboutPageXaml
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="Dpark.Pages.About.AboutPage"
+  xmlns:statics="clr-namespace:Dpark.Statics"
+  xmlns:base="clr-namespace:Dpark.Pages.About"
+  xmlns:views="clr-namespace:Dpark.Views">
+  
+  <ScrollView>
+    <StackLayout Spacing="0" BackgroundColor="White">
+      <ContentView Padding="20">
+        <Label
+          TextColor="{x:Static statics:Palette._006}"
+          Style="{DynamicResource Label_Default-Medium-Default}"
+				  LineBreakMode="WordWrap"
+				  Text="{Binding Overview}" />
+      </ContentView>
+      <ContentView Padding="20">
+        <Label
+          TextColor="{x:Static statics:Palette._006}"
+          Style="{DynamicResource Label_Default-Medium-Default}"
+				  LineBreakMode="WordWrap"
+				  Text="{Binding Notes}" />
+      </ContentView>
+      <Image
+			Source="about_background.png"
+			Aspect="AspectFit" />
+      <ContentView Padding="20">
+        <Label
+          TextColor="{x:Static statics:Palette._006}"
+          Style="{DynamicResource Label_Default-Medium-Default}"
+				  LineBreakMode="WordWrap"
+				  Text="{Binding ListHeading}" />
+      </ContentView>
+    </StackLayout>
+  </ScrollView>
+</base:AboutPageXaml>

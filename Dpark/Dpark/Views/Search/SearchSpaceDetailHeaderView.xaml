@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:SearchSpaceDetailHeaderViewXaml 
+  xmlns="http://xamarin.com/schemas/2014/forms" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+  x:Class="Dpark.Views.Search.SearchSpaceDetailHeaderView"
+  xmlns:base="clr-namespace:Dpark.Views.Search">
+
+  <base:SearchSpaceDetailHeaderViewXaml.Content>
+    <AbsoluteLayout
+      HeightRequest="300">
+
+      <Image
+        AbsoluteLayout.LayoutFlags="All"
+        AbsoluteLayout.LayoutBounds="0,0,1,1"
+        x:Name="SpaceImage"
+        Aspect="AspectFill"
+        Source="{Binding PublicSpace.ImageSource}" />
+
+      <ActivityIndicator
+        AbsoluteLayout.LayoutFlags="WidthProportional, PositionProportional"
+        AbsoluteLayout.LayoutBounds="0,0.5,1,AutoSize"
+        BindingContext="{x:Reference SpaceImage}"
+        IsEnabled="{Binding IsLoading}"
+        IsVisible="{Binding IsLoading}"
+        IsRunning="{Binding IsLoading}" />
+      
+      
+    </AbsoluteLayout>
+  </base:SearchSpaceDetailHeaderViewXaml.Content>
+</base:SearchSpaceDetailHeaderViewXaml>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:SearchSpaceDetailPageXaml
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="Dpark.Pages.Search.SearchSpaceDetailPage"
+  xmlns:base="clr-namespace:Dpark.Pages.Search"
+  xmlns:searchViews="clr-namespace:Dpark.Views.Search"
+  Title="{Binding PublicSpace.Title}">
+  
+  <base:SearchSpaceDetailPageXaml.Content>
+    <OnPlatform x:TypeArguments="View">
+      
+    <OnPlatform.iOS>
+      <StackLayout Spacing="0">
+        <searchViews:SearchSpaceDetailHeaderView />
+
+        <TableView
+					Intent="Menu"
+					HasUnevenRows="true">
+          <TableRoot>
+            <TableSection Title="Details">
+              <ViewCell Height="200">
+                <StackLayout Spacing="5">
+
+                  <searchViews:SearchSpaceDetailTitleView />
+                  <searchViews:SearchSpaceDetailLocationView />
+            
+                </StackLayout>
+              </ViewCell>
+            </TableSection>
+            
+            <TableSection Title="Options">
+              <!--<ViewCell Height="100">
+                <StackLayout Spacing="5">
+
+                  <searchViews:FlagSpaceLabelView />
+                  <searchViews:SearchSpaceDetailOptionView />
+                  
+                </StackLayout>
+              </ViewCell>-->
+              <ImageCell
+                Text="Flag this space"
+                ImageSource="flagspacetab"
+                StyleId="disclosure"
+                Tapped="FlagSpaceTapped"/>
+            </TableSection>            
+          </TableRoot>
+        </TableView>
+      </StackLayout>
+    </OnPlatform.iOS>
+      
+    </OnPlatform>
+  </base:SearchSpaceDetailPageXaml.Content>
+</base:SearchSpaceDetailPageXaml>

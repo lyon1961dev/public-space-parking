@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:SearchSpaceDetailTitleViewXaml
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="Dpark.Views.Search.SearchSpaceDetailTitleView"
+  xmlns:base="clr-namespace:Dpark.Views.Search"
+  xmlns:statics="clr-namespace:Dpark.Statics"
+  xmlns:core="clr-namespace:System">
+
+  <StackLayout 
+    Spacing ="0" 
+    Padding="30,10">
+    
+    <Label x:Name="TitleLabel"
+             Text="Space"
+             FontSize="Medium"
+             FontAttributes="Bold"
+             LineBreakMode="TailTruncation">
+      <Label.TextColor>
+        <OnPlatform
+          x:TypeArguments="Color"
+          iOS="{x:Static statics:Palette._003}"
+          Android="{x:Static statics:Palette._007}"
+          WinPhone="{x:Static statics:Palette._006}" />
+      </Label.TextColor>
+    </Label>
+    
+    <Label
+      Text="{Binding PublicSpace.Title}"
+      TextColor="{x:Static statics:Palette._006}"
+      FontAttributes="Bold"
+      LineBreakMode="WordWrap"
+		  Style="{DynamicResource Label_Default-Medium-Default}" />
+    
+  </StackLayout>
+</base:SearchSpaceDetailTitleViewXaml>

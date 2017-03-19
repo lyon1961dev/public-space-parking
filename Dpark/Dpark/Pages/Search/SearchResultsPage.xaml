@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:SearchResultsPageXaml
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="Dpark.Pages.Search.SearchResultsPage"
+xmlns:base="clr-namespace:Dpark.Pages.Search"
+xmlns:searchView="clr-namespace:Dpark.Views.Search">
+  <searchView:SearchListView
+  IsPullToRefreshEnabled="True"
+	ItemsSource="{Binding PublicSpaces}"
+	RefreshCommand="{Binding LoadAccountsRefreshCommand}"
+	IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+	ItemTapped="OnItemTapped" />
+</base:SearchResultsPageXaml>
